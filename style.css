@@ -1,0 +1,213 @@
+/* ---------- RESET & BASE ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f9ff;
+    color: #1e2a3a;
+}
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* ---------- COLOR SCHEME ---------- */
+:root {
+    --primary: #1e4a6f;
+    --secondary: #2a7faa;
+    --light-bg: #ffffff;
+    --shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+/* ---------- NAVIGATION (FLEXBOX) ---------- */
+nav {
+    background: var(--primary);
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+nav h1 {
+    color: white;
+    font-size: 1.5rem;
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: background 0.3s, transform 0.2s;
+}
+nav ul li a:hover {
+    background: var(--secondary);
+    transform: scale(1.05);
+}
+
+/* ---------- CARDS & LAYOUT ---------- */
+.card {
+    background: var(--light-bg);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    margin-bottom: 25px;
+}
+h2 {
+    color: var(--primary);
+    margin-bottom: 15px;
+}
+
+/* ---------- ABOUT PAGE: TABLE & LISTS ---------- */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 15px 0;
+}
+table th, table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+}
+table th {
+    background: var(--primary);
+    color: white;
+}
+ul, ol {
+    margin-left: 25px;
+    margin-bottom: 15px;
+}
+
+/* ---------- PROJECTS PAGE: CSS GRID ---------- */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 15px;
+}
+.project-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+}
+.project-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+.project-card .info {
+    padding: 15px;
+}
+.project-card a {
+    color: var(--secondary);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* ---------- PLANNER / CONTACT FORM ---------- */
+.input-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border 0.3s;
+}
+input:focus, textarea:focus {
+    border-color: var(--secondary);
+    outline: none;
+}
+button {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+button:hover {
+    background: var(--secondary);
+    transform: scale(1.03);
+}
+.task-item {
+    background: #f0f7ff;
+    padding: 12px 15px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.task-item .actions button {
+    padding: 5px 12px;
+    font-size: 0.8rem;
+    margin-left: 5px;
+}
+.completed {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
+/* ---------- MULTIMEDIA (Audio) ---------- */
+audio {
+    width: 100%;
+    margin-top: 15px;
+}
+
+/* ---------- RESPONSIVE (MOBILE-FRIENDLY) ---------- */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        text-align: center;
+        gap: 12px;
+    }
+    nav ul {
+        justify-content: center;
+        gap: 10px;
+    }
+    .input-group {
+        flex-direction: column;
+    }
+    .project-grid {
+        grid-template-columns: 1fr; /* Stacks cards on mobile */
+    }
+    .task-item {
+        flex-direction: column;
+        gap: 10px;
+        align-items: stretch;
+        text-align: center;
+    }
+}
+
+/* ---------- REQUIRED ANIMATION (Fade-in) ---------- */
+main {
+    animation: fadeIn 0.8s ease-in;
+}
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}

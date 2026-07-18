@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Contact</title><link rel="stylesheet" href="style.css"></head>
+<body>
+    <nav> <!-- SAME NAV --> </nav>
+    <main class="container">
+        <div class="card" style="max-width: 600px; margin: 0 auto;">
+            <h2>📬 Contact Me</h2>
+            <form id="contactForm" onsubmit="validateForm(event)">
+                <input type="text" id="name" placeholder="Full Name" style="margin-bottom: 12px;">
+                <input type="email" id="email" placeholder="Email Address" style="margin-bottom: 12px;">
+                <input type="text" id="phone" placeholder="Phone Number (digits only)" style="margin-bottom: 12px;">
+                <textarea id="message" rows="4" placeholder="Your Message..." style="margin-bottom: 12px;"></textarea>
+                <button type="submit" style="width: 100%;">Send Message</button>
+                <p id="formFeedback" style="margin-top: 15px; font-weight: bold;"></p>
+            </form>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+
+    <nav>
+        <h1>MyPortfolio</h1>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="planner.html">Planner</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+</html>
